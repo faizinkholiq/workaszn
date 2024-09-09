@@ -1,0 +1,21 @@
+# Node modules
+node_modules/
+
+# Environment files
+.env
+
+# Logs
+logs/
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Build directory (if any)
+build/
+
+# Miscellaneous
+*.tmp
+*.swp
+*.swo
+*.swn
