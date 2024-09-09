@@ -1,6 +1,7 @@
 version: '3'
 
 services:
+
   backend:
     build:
       context: ./server
@@ -11,6 +12,10 @@ services:
       - PORT=5000
     depends_on:
       - mongo
+    volumes:
+      - ./server:/usr/src/app
+      - /usr/src/app/node_modules
+    command: nodemon server.js
 
   frontend:
     build:
@@ -19,6 +24,10 @@ services:
       - "3000:80"
     depends_on:
       - backend
+    volumes:
+      - ./client:/usr/src/app
+      - /usr/src/app/node_modules
+    command: npm start
 
   mongo:
     image: mongo:latest
