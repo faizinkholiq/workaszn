@@ -20,7 +20,7 @@ mongoose.connect(process.env.MONGO_URI, {
 
 // Basic route
 app.get('/', (req, res) => {
-  res.send('Hello from Workaszn!');
+  res.send('Hello from Workaszn!!');
 });
 
 app.use('/api', apiRoutes);
