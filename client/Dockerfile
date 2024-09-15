@@ -1,7 +1,7 @@
 # Dockerfile for the frontend
 
 # Use an official Node.js runtime as a parent image
-FROM node:18
+FROM node:20
 
 # Set the working directory in the container
 WORKDIR /usr/src/app
