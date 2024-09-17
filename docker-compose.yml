@@ -2,7 +2,7 @@ version: '3'
 
 services:
 
-  backend:
+  workaszn_backend:
     build:
       context: ./server
     ports:
@@ -14,13 +14,12 @@ services:
       - CHOKIDAR_USEPOLLING=true
       - WATCHPACK_POLLING=true
     depends_on:
-      - mongo
+      - workaszn_mongo
     volumes:
       - ./server:/usr/src/app
       - /usr/src/app/node_modules 
-    command: nodemon server.js
 
-  frontend:
+  workaszn_frontend:
     build:
       context: ./client
     ports:
@@ -30,13 +29,12 @@ services:
       - CHOKIDAR_USEPOLLING=true
       - WATCHPACK_POLLING=true 
     depends_on:
-      - backend
+      - workaszn_backend
     volumes:
       - ./client:/usr/src/app
       - /usr/src/app/node_modules
-    command: npm start
 
-  mongo:
+  workaszn_mongo:
     image: mongo:latest
     ports:
       - "27017:27017"
