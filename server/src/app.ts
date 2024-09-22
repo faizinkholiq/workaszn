@@ -11,14 +11,17 @@ const app = express();
 app.use(express.json());
 
 // Database Connection
-mongoose.connect(process.env.MONGODB_URI as string, {
+// mongoose.connect(process.env.MONGODB_URI as string, {
 //   useNewUrlParser: true,
 //   useUnifiedTopology: true
-})
-.then(() => console.log('MongoDB connected'))
-.catch(err => console.error('MongoDB connection error:', err));
+// })
+// .then(() => console.log('MongoDB connected'))
+// .catch(err => console.error('MongoDB connection error:', err));
 
 // Routes
+app.get('/', async (req, res) => {
+  res.status(200).json({ message: "hello" });
+});
 app.use('/api/users', userRoutes);
 
 // Global Error Handler
