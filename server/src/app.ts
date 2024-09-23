@@ -20,7 +20,7 @@ app.use(express.json());
 
 // Routes
 app.get('/', async (req, res) => {
-  res.status(200).json({ message: "hello" });
+  res.status(200).json({ message: "hellow" });
 });
 app.use('/api/users', userRoutes);
 
